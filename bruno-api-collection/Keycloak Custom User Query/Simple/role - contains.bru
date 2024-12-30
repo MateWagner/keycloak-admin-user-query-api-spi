@@ -1,0 +1,15 @@
+meta {
+  name: role - contains
+  type: http
+  seq: 6
+}
+
+get {
+  url: http://localhost:8282/auth/admin/realms/test/user-query?q=role:C:_role
+  body: none
+  auth: inherit
+}
+
+params:query {
+  q: role:C:_role
+}

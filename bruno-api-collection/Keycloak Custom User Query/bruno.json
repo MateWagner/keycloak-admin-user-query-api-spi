@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "Keycloak Custom User Query",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

@@ -1,0 +1,17 @@
+meta {
+  name: username - not equal
+  type: http
+  seq: 2
+}
+
+get {
+  url: http://localhost:8282/auth/admin/realms/test/user-query?q=username:EQ:admin1&pageSize=1&pageNumber=0
+  body: none
+  auth: inherit
+}
+
+params:query {
+  q: username:EQ:admin1
+  pageSize: 1
+  pageNumber: 0
+}

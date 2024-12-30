@@ -1,0 +1,33 @@
+auth {
+  mode: bearer
+}
+
+auth:bearer {
+  token: {{kcAdminAccessToken}}
+}
+
+script:pre-request {
+  const axios = require('axios').default;
+  const { URLSearchParams } = require('url');
+  
+  const encodedParams = new URLSearchParams();
+  encodedParams.set('client_id', 'admin-cli');
+  encodedParams.set('username', 'admin');
+  encodedParams.set('password', 'admin');
+  encodedParams.set('grant_type', 'password');
+  
+  const options = {
+    method: 'POST',
+    url: 'http://localhost:8282/auth/realms/master/protocol/openid-connect/token',
+    headers: {'content-type': 'application/x-www-form-urlencoded'},
+    data: encodedParams,
+  };
+  
+  try {
+    const { data } = await axios.request(options);
+    console.log(data?.access_token)
+    bru.setVar("kcAdminAccessToken", data?.access_token)
+  } catch (error) {
+    console.error("err: ", error);
+  }
+}

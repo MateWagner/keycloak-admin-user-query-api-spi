@@ -1,0 +1,21 @@
+meta {
+  name: Example 1
+  type: http
+  seq: 1
+}
+
+get {
+  url: http://localhost:8282/auth/admin/realms/test/user-query?q=username%3AC%3Aadmin%7Cemail%3AC%3A1
+  body: none
+  auth: inherit
+}
+
+params:query {
+  q: username%3AC%3Aadmin%7Cemail%3AC%3A1
+}
+
+docs {
+  To use the complex form we need to enconde JavaScript URL form.
+  exmple: username:C:admin|email:C:1 -> username%3AC%3Aadmin%7Cemail%3AC%3A1
+  
+}

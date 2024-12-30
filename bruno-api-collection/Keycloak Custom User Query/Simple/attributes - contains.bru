@@ -1,0 +1,15 @@
+meta {
+  name: attributes - contains
+  type: http
+  seq: 7
+}
+
+get {
+  url: http://localhost:8282/auth/admin/realms/test/user-query?q=attributes.my_attribute:C:user
+  body: none
+  auth: inherit
+}
+
+params:query {
+  q: attributes.my_attribute:C:user
+}
