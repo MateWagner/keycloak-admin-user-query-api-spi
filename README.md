@@ -80,7 +80,7 @@ A small demo has been prepared, leveraging Docker for ease of use and consistenc
 
   | **Username** | **First Name** | **Last Name** | **Email** | **Attributes** | **Attributes Value** | **Password** | **Roles**  |
   |--------------|----------------|---------------|-----------|----------------|----------------------|--------------|------------|
- || `admin`      | -              | -             | -         | -              | -                    | `admin`      | `kc admin` |
+  | `admin`      | -              | -             | -         | -              | -                    | `admin`      | `kc admin` |
 
 - **Realm**: _test_
 
